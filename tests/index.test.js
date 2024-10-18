@@ -22,16 +22,16 @@ describe('capitalize', () => {
 })
 
 describe('reverseString', () => {
-    test('reverses a common string', () => {
+    test('test reversing a common string', () => {
         expect(reverseString('hello')).toBe('olleh');
     })
-    test('capitalizes a single character', () => {
+    test('test capitalizing a single character', () => {
         expect(reverseString('a')).toBe('a');
     })
-    test('works with empty string', () => {
+    test('test if it works with empty string', () => {
         expect(reverseString('')).toBe('');
     })
-    test('reverses correctly a string with punctuation', () => {
+    test('test reversing correctly a string with punctuation', () => {
         expect(reverseString('Hello!')).toBe('!olleH');
     })
 })
@@ -52,22 +52,22 @@ describe('calculator', () => {
 })
 
 describe('caesarCipher', () => {
-    test('shifts each character by the shift factor', () => {
+    test('test shifting characters with a shift factor', () => {
         expect(caesarCipher('hello world', 3)).toBe('khoor zruog');
     })
-    test('wraps from z to a', () => {
+    test('test wrapping from z to a', () => {
         expect(caesarCipher('z', 1)).toBe('a');
     })
-    test('keeps the same case', () => {
+    test('test case preservation', () => {
         expect(caesarCipher('Hello world', 3)).toBe('Khoor zruog');
     })
-    test('handles punctuation', () => {
-        expect(caesarCipher('Hello world!', 3)).toBe('Khoor zruog!');
+    test('test punctuation', () => {
+        expect(caesarCipher('Hello, world!', 3)).toBe('Khoor, zruog!');
     })
 })
 
 describe('analyzeArray', () => {
-    test('calculates average, min, max, length of array', () => {
+    test('test average, min, max, length of array', () => {
         expect(analyzeArray([1,8,3,4,2,6])).toEqual({
             average: 4,
             min: 1,
@@ -75,7 +75,7 @@ describe('analyzeArray', () => {
             length: 6
         });
     })
-    test('calculates average, min, max, length of array with negative numbers', () => {
+    test('test average, min, max, length of array with negative numbers', () => {
         expect(analyzeArray([-1,0,1])).toEqual({
             average: 0,
             min: -1,
@@ -83,7 +83,7 @@ describe('analyzeArray', () => {
             length: 3
         });
     })
-    test('return an empty object for an empty array', () => {
+    test('test an empty object for an empty array', () => {
         expect(analyzeArray([])).toEqual({
             average: NaN,
             min: Infinity,

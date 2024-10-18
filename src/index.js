@@ -1,11 +1,14 @@
+// Function that takes a string and returns it with the first character capitalized.
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Function that takes a string and returns it reversed.
 function reverseString(str) {
     return str.split('').reverse().join('');
 }
 
+// Object that contains functions for the basic operations: add, subtract, divide, and multiply.
 const calculator = {
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
@@ -13,6 +16,7 @@ const calculator = {
     multiply: (a, b) => a * b
 }
 
+// Function that takes a string and a shift factor and returns it with each character “shifted”.
 function caesarCipher(str, shift) {
     const charCodes = [];
     for(let i = 0; i < str.length; i++) {
@@ -33,6 +37,7 @@ function caesarCipher(str, shift) {
     return String.fromCharCode(...charCodes);
 }
 
+// Function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
 function analyzeArray(arr) {
     const sum = arr.reduce((acc, val) => acc + val, 0);
     const average = sum / arr.length;
