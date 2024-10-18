@@ -1,6 +1,7 @@
 const { 
     capitalize,
-    reverseString 
+    reverseString,
+    calculator 
 } = require('../src/index');
 
 describe('capitalize', () => {
@@ -30,5 +31,20 @@ describe('reverseString', () => {
     })
     test('reverses correctly a string with punctuation', () => {
         expect(reverseString('Hello!')).toBe('!olleH');
+    })
+})
+
+describe('calculator', () => {
+    test('test addition', () => {
+        expect(calculator.add(2, 3)).toBe(5);
+    })
+    test('test subtraction', () => {
+        expect(calculator.subtract(5, 3)).toBe(2);
+    })
+    test('test dividing', () => {
+        expect(calculator.divide(6, 3)).toBe(2);
+    })
+    test('test multiplying', () => {
+        expect(calculator.multiply(2, 3)).toBe(6);
     })
 })
