@@ -13,8 +13,39 @@ const calculator = {
     multiply: (a, b) => a * b
 }
 
+function caesarCipher(str, shift) {
+    const charCodes = [];
+    for(let i = 0; i < str.length; i++) {
+        const char = str[i];
+        const code = str.charCodeAt(i);
+        if (char.match(/[a-z]/i)) {
+            // Dealing with uppercase
+            if (code >= 65 && code <= 90 ) {
+            charCodes.push((code - 65 + shift) % 26 + 65);
+            // Dealing with lowercase
+            } else if (code >= 97 && code <= 122) {
+                charCodes.push((code - 97 + shift) % 26 + 97);
+            }
+        } else {
+            charCodes.push(code);
+        }
+    }
+    return String.fromCharCode(...charCodes);
+}
+
+function analyzeArray(arr) {
+    const sum = arr.reduce((acc, val) => acc + val, 0);
+    const average = sum / arr.length;
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const length = arr.length;
+    return {average, min, max, length};
+}
+
 module.exports = { 
     capitalize,
     reverseString,
-    calculator 
+    calculator,
+    caesarCipher,
+    analyzeArray
 };
